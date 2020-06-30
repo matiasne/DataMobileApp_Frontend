@@ -1,0 +1,49 @@
+<div class="container ventana" [@fadeInOutAnimation]>
+	<form>
+		<div class="form-group">
+			<label for="nombre"  >Nombre:</label>
+			<input type="text" class="form-control" name="nombre" [(ngModel)]="usuario.nombreCompleto">
+		</div>
+		<div class="form-group">
+			<label for="nombre"  >Mail:</label>
+			<input type="text" class="form-control" name="baseDatos" [(ngModel)]="usuario.mail">
+		</div>
+		<div class="form-group">
+			<label for="nombre"  >Telefono:</label>
+			<input type="text" class="form-control" name="logoUrl" [(ngModel)]="usuario.telefono">
+		</div>
+		<div class="form-group">
+			<label for="nombre"  >Direccion:</label>
+			<input type="text" class="form-control" name="colorMenu" [(ngModel)]="usuario.direccion">
+		</div>
+
+		<div class="form-group">
+
+			<p>Selecciona el cliente y luego presiona asignar.</p> 
+			<div class="col-sm-6">
+				<select #selectCliente class="form-control" [(ngModel)]="clienteSeleccionado.ClienteId" [ngModelOptions]="{standalone: true}">  
+				<option *ngFor="let cliente of todosClientes" [value]="cliente.ClienteId">
+					{{cliente.Nombre}}
+				</option>        
+				</select>
+			</div>
+			<div class="col-sm-6">
+				<button type="button" class="btn btn-primary" (click)="asignarCliente()">Asignar</button>
+			</div>
+			<div class="col-sm-12">
+				<p>Clientes Asignados:</p>
+				<table>
+				<tr *ngFor="let clien of clientes">
+					<td>{{clien.Nombre}}</td>
+					<td><button type="button" (click)="borrarCliente(clien.ClienteId)">Borrar</button></td>
+				</tr>
+				</table>
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<div class="form-group">							  		
+				<button type="button" class="btn btn-info btn-lg" (click)="updateUsuario()">Guardar</button>
+			</div>
+		</div>
+	</form>
+</div>

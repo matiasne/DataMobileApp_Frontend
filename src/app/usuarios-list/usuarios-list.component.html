@@ -1,0 +1,19 @@
+<div class="container ventana" [@fadeInOutAnimation]>
+	<h3>Usuarios</h3>
+	<table class="table">
+		<tr>
+			<th>Nombre</th>
+			<th>Mail</th>
+			<th>Id Cliente</th>
+			<th>Editar</th>
+			<th>Eliminar</th>
+		</tr>
+		<tr *ngFor="let usuario of usuarios; let i =index">
+			<td>{{usuario.nombreCompleto}}</td>
+			<td>{{usuario.mail}}</td>
+			<td>{{usuario.id_cliente}}</td>
+			<td><button type="button" class="btn btn-info" [routerLink]="['/home/edicionUsuario', usuario.id]">Editar</button></td>
+			<td><button type="button" class="btn btn-info" (click)="EliminarUsuario(usuario.id)">Eliminar</button></td>
+		</tr>
+	</table>
+</div>

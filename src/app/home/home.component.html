@@ -1,0 +1,100 @@
+
+
+
+<div class="navbar-secundaria">   
+  <a class="btn"  (click)="openNavMenu()"><span class="glyphicon glyphicon-option-horizontal"></span></a>
+    <a class="btn pull-right"  data-toggle="collapse" data-target=".nav-collapse.in" (click)="openNav()" >
+        <div *ngIf="!alertaNotificaciones">          
+            <i class="material-icons md-48">notifications</i>        
+        </div>
+        <div *ngIf="alertaNotificaciones">
+              <i class="material-icons md-48 alerta-notificaciones">notifications</i>            
+        </div>
+    </a> 
+  
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="enviarNotificacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">          
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="">Ingrese un titulo:</label>
+            <input type="text" class="form-control" [(ngModel)]="notificacionTitulo" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group">
+              <label for="">Ingrese el contenido:</label>
+            <textarea  class="form-control" [(ngModel)]="notificacionTexto" [ngModelOptions]="{standalone: true}"> </textarea>
+          </div>            
+        </form>		        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="enviarNoticia()">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="mySidenavMenu" class="sidenavMenu">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNavMenu()">&times;</a>
+    <!-- Button trigger modal -->
+    <div class="container">
+    <div class="row">
+      <a class="navbar-brand" (click)="seleccionarClientes()">
+          {{_usuarioActivoService.getClienteNombre()}}
+      </a>
+    </div>
+    <div class="row filas-menu">
+        <a class="btn btn-menu"  (click)="irHome()"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;MENU PRINCIPAL</a>        
+    </div>
+    <div class="row filas-menu" *ngIf="_usuarioActivoService.isSuper()">
+        <a class="btn btn-menu"  (click)="irListaEmpresas()"><span class="glyphicon glyphicon-dashboard"></span>&nbsp;&nbsp;EMPRESAS</a>
+    </div>
+    <div class="row filas-menu" *ngIf="_usuarioActivoService.isAdmin()">
+        <a class="btn btn-menu"  (click)="irListaUsuarios()"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;USUARIOS</a>
+        
+    </div>
+    <div class="row filas-menu" *ngIf="_usuarioActivoService.isAdmin()">
+        <a class="btn btn-menu" data-toggle="modal"  data-target="#enviarNotificacion" (click)="closeNavMenu()">
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;&nbsp;MENSAJE
+          </a>
+    </div>   
+    <div class="row filas-menu">
+        <a class="btn btn-menu" (click)="logout()">
+            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;&nbsp;LOG OUT
+        </a> 
+    </div> 
+    <!--div class="row filas-menu">
+      <a class="btn btn-menu" (click)="close()">
+          <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;&nbsp;CLOSE
+      </a> 
+    </div-->
+  </div>
+</div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <!-- Button trigger modal -->
+  <div class="row" *ngFor="let notificacion of notificaciones; let i =index">
+      <div *ngIf="notificacion.tipo == 'registro'">
+          <app-notificacion-nuevo-usuario [datos]="notificacion"></app-notificacion-nuevo-usuario>
+      </div>      
+  </div>
+
+  <div class="row" *ngFor="let notificacion of notificaciones; let i =index">
+      <div *ngIf="notificacion.tipo == 'noticia'">            
+        <app-notificacion-noticia [datos]="notificacion"></app-notificacion-noticia>
+      </div>      
+  </div>  
+</div>
+
+<router-outlet></router-outlet>

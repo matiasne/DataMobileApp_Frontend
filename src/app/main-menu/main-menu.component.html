@@ -1,0 +1,16 @@
+<div class="container" [@fadeInOutAnimation]>
+	<div *ngFor="let modulo of modulos; let i=index">
+	<a (click)="irAlModulo(i)">
+		<div class="item-main-menu col-md-12 hvr-bounce-to-right">
+			<div class="col-xs-10">
+				<h3 class="titulo">{{modulo.nombre}}</h3>
+				<hr> 
+				<p>{{modulo.descripcion}}</p>	
+			</div>
+			<div class="icon-container col-xs-2">				
+				<i class="material-icons md-90">keyboard_arrow_right</i>				
+			</div>		
+		</div>
+	</a>  
+	</div> 
+</div>

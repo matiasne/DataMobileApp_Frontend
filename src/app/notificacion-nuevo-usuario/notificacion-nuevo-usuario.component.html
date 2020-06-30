@@ -1,0 +1,47 @@
+
+<a data-toggle="modal" [attr.data-target]="'#detalle'+ datos.id" (click)="obtenerDatos()">  
+  <div class="notificacion" id="notificacion{{datos.id}}">
+    <div class="col-xs-10">
+      <h5>Nuevo Usuario</h5>
+      <hr>
+      {{datos.texto}}
+    </div>  
+    
+  </div>
+</a>
+<!-- Modal -->
+<div class="modal fade" id="detalle{{datos.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"> 
+      <div class="modal-header">
+        <h3 class="modal-title notificacion-titulo" id="exampleModalLabel">{{datos.titulo}}</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="eliminarNotificacion()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body notificacion-texto">
+          <p>Selecciona el cliente y luego presiona asignar.</p> 
+          <select #selectCliente class="form-control" [(ngModel)]="clienteSeleccionado.ClienteId" [ngModelOptions]="{standalone: true}">  
+            <option *ngFor="let cliente of todosClientes" [value]="cliente.ClienteId">
+              {{cliente.Nombre}}
+            </option>        
+          </select>
+          <button type="button" class="btn btn-primary" (click)="asignarCliente()">Asignar</button>
+          
+          <h5>Clientes Asignados:</h5>
+          <table>
+            <tr *ngFor="let clien of clientes">
+              <td>{{clien.Nombre}}</td>
+              <td>
+                <button type="button" class="btn btn-link" (click)="borrarCliente(clien.ClienteId)">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+              </td>
+            </tr>
+          </table>
+      
+      </div>
+                   
+    </div>
+  </div>
+</div>

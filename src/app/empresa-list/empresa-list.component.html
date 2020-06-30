@@ -1,0 +1,15 @@
+<div class="container ventana" [@fadeInOutAnimation]>
+<h3>Seleccione la empresa que desea editar</h3>
+<button type="button" class="btn btn-info" [routerLink]="['/home/agregarEmpresa']">Crear Nueva</button>
+<table class="table">
+	<tr>
+		<th>Nombre</th>
+		<th>Editar</th>
+	</tr>
+	<tr *ngFor="let empresa of empresas; let i =index">
+		<td>{{empresa.nombre}}</td>
+		<td><button type="button" class="btn btn-info" [routerLink]="['/home/edicionEmpresa', empresa.id]">Editar</button></td>
+	</tr>
+</table>
+<button type="button" class="btn btn-info" [routerLink]="['/home']">Atras</button>
+</div>

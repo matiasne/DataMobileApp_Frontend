@@ -1,0 +1,21 @@
+<div class="container ventana" [@fadeInOutAnimation]>
+  	<div class="form-group">
+		<label for="nombre">Nombre del modulo</label>
+		<input type="text" class="form-control" name="nombre" [(ngModel)]="modulo.nombre">
+	</div>
+	<div class="form-group">
+		<label for="nombre">url</label>
+		<input type="text" class="form-control" name="nombre" [(ngModel)]="modulo.url">
+	</div>
+	<div class="form-group">
+		<label for="vista_admin"></label>
+		<input type="checkbox" class="form-control" name="vista_admin" [(ngModel)]="modulo.vistaAdmin">Vista Administrador
+	</div>
+	<div class="form-group">
+		<label for="vista_cliente"></label>
+		<input type="checkbox" class="form-control" name="vista_cliente" [(ngModel)]="modulo.vistaCliente">Vista Cliente
+	</div>
+	<div class="form-group">		
+		<button type="button" class="btn btn-primary" name="nombre" (click)="AgregarModulo()">Agregar</button>
+	</div>
+</div> 

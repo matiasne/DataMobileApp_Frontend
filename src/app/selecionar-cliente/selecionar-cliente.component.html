@@ -1,0 +1,16 @@
+
+<div class="container ventana-clientes" [@fadeInOutAnimation]>
+  
+	<div *ngFor="let cliente of clientes; let i=index">
+	<a (click)="selecionarCliente(cliente.ClienteId)">
+		<div class="item-main-menu col-md-12 hvr-bounce-to-right">
+			<div class="col-xs-10">
+				<h3 class="titulo">{{cliente.Nombre}}</h3>				
+			</div>
+			<div class="icon-container col-xs-2">				
+				<i class="material-icons md-90">keyboard_arrow_right</i>				
+			</div>		
+		</div>
+	</a>  
+	</div> 
+</div>

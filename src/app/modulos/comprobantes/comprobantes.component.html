@@ -1,0 +1,80 @@
+<div class="container ventana" [@fadeInOutAnimation]>
+	
+
+	 <div id="accordion" role="tablist" aria-multiselectable="true">
+	  <div class="panel panel-default" *ngFor="let tipo of tiposComprobantes; let i=index">
+	    <div class="panel-heading" role="tab" id="headingOne">
+	      <h4 class="panel-title">
+	        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne{{i}}" aria-expanded="true" aria-controls="collapseOne">
+	          <i class="material-icons md-90">keyboard_arrow_down</i> {{tipo}}
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseOne{{i}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+	      <table class="table">
+		    	<tr>
+					<td>
+						Fecha
+					</td>
+					<td>
+						Comprobante
+					</td>
+					<td>
+						Letra
+					</td>
+					<td>
+						Sucursal
+					</td>
+					<td>
+						Numero
+					</td>
+					<td>
+						Condición
+					</td>
+					<td>
+						Gravado  
+					</td>
+					<td>
+						Iva
+					</td>
+					<td>
+						Total
+					</td>
+				</tr>
+				<tr *ngFor="let item of itemsComprobantes">
+					<td *ngIf="item.COMPROBANTE == tipo">
+						{{item.FECEMI_C.date}}
+					</td>
+					<td *ngIf="item.COMPROBANTE == tipo">
+						{{item.COMPROBANTE}}
+					</td >
+					<td *ngIf="item.COMPROBANTE == tipo">
+						{{item.LETRAA_C}}
+					</td>
+					<td *ngIf="item.COMPROBANTE == tipo">
+						{{item.SUCURS_C}}
+					</td>
+					<td *ngIf="item.COMPROBANTE == tipo">
+						{{item.NUMERO_C}}
+					</td>
+					<td *ngIf="item.COMPROBANTE == tipo">
+						{{item.CONDICION}}
+					</td>
+					<td *ngIf="item.COMPROBANTE == tipo">
+						{{item.TGRAVADO}}
+					</td>
+					<td *ngIf="item.COMPROBANTE == tipo">
+						{{item.TIVA}}
+					</td>
+					<td *ngIf="item.COMPROBANTE == tipo">
+						{{item.TTOTAL}}
+					</td>
+					<td *ngIf="item.COMPROBANTE == tipo">
+						
+					</td>
+				</tr>
+			</table>
+	    </div>
+	  </div>	  
+	</div>
+</div>

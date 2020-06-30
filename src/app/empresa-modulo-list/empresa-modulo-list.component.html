@@ -1,0 +1,17 @@
+<div class="container ventana" [@fadeInOutAnimation]>
+<table class="table">
+	<tr>
+		<th>Nombre</th>
+		<th>Eliminar</th>
+	</tr>
+	<tr *ngFor="let modulo of modulos; let i= index">
+		<th>{{modulo.nombre}}</th>
+		<th><button type="button" class="btn btn-primary" (click)="DeleteModulo(modulo.id)">Eliminar</button>
+	</tr>
+	<tr>
+		<th>
+			<button type="button" class="btn btn-primary" [routerLink]="['/home/addEmpresaModulo', id_empresa]">Agregar Modulo</button>
+		</th>
+	</tr>
+</table>
+</div>

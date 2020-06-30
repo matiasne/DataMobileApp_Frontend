@@ -1,0 +1,28 @@
+<a data-toggle="modal" [attr.data-target]="'#detalle'+ datos.id">
+  
+  <div class="notificacion" id="notificacion{{datos.id}}">
+      <h5>Noticia</h5>
+      <hr>
+     {{datos.titulo}}     
+  </div>
+</a>
+<!-- Modal -->
+<div class="modal fade" id="detalle{{datos.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"> 
+      <div class="modal-header">
+        <h3 class="modal-title notificacion-titulo" id="exampleModalLabel">{{datos.titulo}}</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body notificacion-texto">
+          <p>{{datos.texto}}	</p>        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="eliminarNotificacion()"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+      </div>              
+    </div>
+  </div>
+</div>

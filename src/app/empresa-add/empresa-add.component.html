@@ -1,0 +1,27 @@
+<div class="container ventana" [@fadeInOutAnimation] >
+<form>
+		<div class="form-group">
+  		<label for="nombre"  >Nombre:</label>
+  		<input type="text" class="form-control" name="nombre" [(ngModel)]="empresa.nombre">
+  	</div>
+  	<div class="form-group">
+  		<label for="nombre"  >Base de datos:</label>
+  		<input type="text" class="form-control" name="baseDatos" [(ngModel)]="empresa.baseDatos">
+  	</div>
+  	<div class="form-group">
+  		<label for="nombre"  >Logo:</label>
+  		<input type="text" class="form-control" name="logoUrl" [(ngModel)]="empresa.logoUrl">
+  	</div>
+  	<div class="form-group">
+  		<label for="nombre"  >Color Navegación:</label>
+  		<input type="text" class="form-control" name="colorMenu" [(ngModel)]="empresa.colorMenu">
+  	</div>
+  	<div class="form-group">
+  		<label for="nombre"  >Color Fondo:</label>
+  		<input type="text" class="form-control" name="background" [(ngModel)]="empresa.background">
+  	</div>  
+  	<div class="form-group">							  		
+  		<button type="button" class="btn btn-info" (click)="addEmpresa()">Guardar</button>
+	</div>
+</form>
+</div>

@@ -1,0 +1,211 @@
+.profile-img{
+	display: inline-block;;
+	height: 100%;
+	border-radius: 30px;
+	border: 2px solid white;
+}
+
+.navbar-inverse .navbar-toggle {
+    /* border-color: #333; */
+    border: none;
+}
+
+.navbar-secundaria{
+	width: 100%;
+	height: 70px;
+	padding: 15px;
+	background-color: #0b263e;
+    color:#EEEEEE;
+
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.navbar-secundaria a{
+    color:#CCCCCC;
+    font-size: 22px;
+}
+
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+    height: 70px;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+
+@media (min-width: 768px){
+    .navbar-default  {
+        height: 100px;
+    }
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #777;
+    margin-top: 20px;
+}
+
+.item{
+    
+}
+
+#servicios .servicio{
+    margin-top: 150px;
+}
+
+.servicio-descripcion{
+    margin-top:40px;
+}
+.contenido-banner{
+    position: absolute;
+}
+
+.seccion-icono{
+    
+    margin-top: -40px;
+    margin-left: 37%;
+    position: absolute;
+}
+
+.seccion-icono img{
+    width: 70px;
+}
+/*
+.btn-primary{
+    color:white;
+    
+    background-color:#21b754;
+    border:0px;
+    border-radius: 0px;
+}
+
+.btn-default{
+    color:#21b754;
+    font-weight: bold;
+    background-color:white;
+    border:0px;
+    border-radius: 0px;
+}*/
+
+
+
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    background-color: #2098d1; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    z-index: 9998;
+    
+    -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a img{
+    width:10px;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.notificacion-texto{
+    color:black;
+}
+
+.notificacion-titulo{
+    color:black;
+}
+
+.alerta-notificaciones{
+    color:red;
+}
+
+
+.sidenavMenu {
+    color: #f1f1f1;
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #0b263e; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    z-index: 9999;
+    -webkit-box-shadow: 9px -5px 5px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px -5px 5px -8px rgba(0,0,0,0.75);
+    box-shadow: 9px -5px 5px -8px rgba(0,0,0,0.75);
+    -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+}
+
+.sidenavMenu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenavMenu hr{
+    opacity: 0.5;
+}
+
+.filas-menu{
+    border-bottom: 1px solid rgba(255, 255, 255,0.2);
+    padding: 12px;
+}
+
+.btn-menu{
+    margin-left: 30px;
+    float: left;
+    color: #b5c8dc;
+}
+
+a {
+    color: #b5c8dc;
+    text-decoration: none;
+}

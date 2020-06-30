@@ -1,0 +1,92 @@
+<div class="container" [@fadeInOutAnimation]>
+	<div class="titulo-componente">Ficha Financiera</div>
+	<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+		<div class="item-main-menu col-md-12">
+			<div class="col-xs-10">
+				<h3 class="titulo">Filtros</h3>
+				<hr>
+				<p>Complete el formulario para realizar un filtrado de sus datos</p>	
+			</div>
+			<div class="icon-container col-xs-2" >
+				<i class="material-icons md-90">keyboard_arrow_down</i>
+			</div>		
+		</div>
+	</a>
+	<div id="collapseOne" class="panel-collapse collapse">
+        <div class="panel-body">
+            <form>				
+				<div class="form-group col-sm-6">
+					<label for="desde"  >Desde:</label>
+					<input type="date" class="form-control" name="desde" [(ngModel)]="desde">
+				</div>
+				<div class="form-group col-sm-6">
+					<label for="hasta"  >Hasta:</label>
+					<input type="date" class="form-control" name="hasta" [(ngModel)]="hasta" >
+				</div>
+				<div class="form-group col-sm-12">
+					<button class="btn btn-info" (click)="obtenerDatosFichaFinanciera()">Aplicar</button>
+				</div>
+			</form>
+        </div>
+	</div>
+	<div class="text-right" >Saldo Anterior: {{saldoAnterior | numeroFinanciera:saldoAnterior}} </div> 
+			
+    <table class="table">
+			
+    	<tr>
+			<th class="text-center columna-fecha">
+				Fecha
+			</th>
+			<th class="text-left columna-detalle">
+				Detalle
+			</th>
+			<th class="text-left columna-comp">
+				Comp
+			</th>
+			<th class="text-left">
+				Debe
+			</th>
+			<th class="text-left">
+				Haber
+			</th>
+			<th class="text-left">
+				Saldo
+			</th>
+			<th class="text-left columna-fecha">
+				Vto./op
+			</th>
+			<th>
+				
+			</th>
+		</tr>
+		<tr *ngFor="let item of itemsFichaFinanciera">
+			<td class="text-right columna-fecha">
+				{{item.FECHACARGA.date  | date:'dd-MM-yyyy'}}
+			</td>
+			<td class="text-left columna-detalle">
+				{{item.DESDETALLE}}
+			</td>
+			<td class="text-right columna-comp">
+				{{item.COMPROBANTE}}
+			</td>
+			<td class="text-right">
+				{{item.DEBE | numeroFinanciera:item.DEBE}}
+			</td>
+			<td class="text-right">
+				{{item.HABER | numeroFinanciera:item.HABER}}
+			</td>
+			<td class="text-right"> 
+				{{item.SALDO2 |numeroFinanciera:item.SALDO2}}
+			</td>
+			<td class="text-right columna-fecha">
+				{{item.FechaVto.date | date:'dd-MM-yyyy' }}
+			</td>
+			<td class="text-right">
+				
+			</td>
+		</tr>
+	</table>
+	<div class="text-right" >Saldo Vencido: {{saldoVencido | numeroFinanciera:saldoAnterior}} </div> 
+	<div class="text-right" >Saldo A Vencer: {{saldoAVencer | numeroFinanciera:saldoAnterior}} </div> 
+</div>
+

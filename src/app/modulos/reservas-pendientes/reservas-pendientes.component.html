@@ -1,0 +1,40 @@
+<div class="container ventana" [@fadeInOutAnimation]>
+<table class="table">
+	<tr>
+		<td>
+			Fecha
+		</td>
+		<td>
+			Tipo
+		</td>
+		<td>
+			Letra
+		</td>
+		<td>
+			Sucursal
+		</td>
+		<td>
+			Numero
+		</td>
+		
+	</tr>
+	<tr *ngFor="let item of itemReservaPendiente">
+		<td>
+			{{item.fecemi_d.date}}
+		</td>
+		<td>
+			{{item.TIPOOO_D}}
+		</td>
+		<td>
+			{{item.LETRAA_D}}
+		</td>
+		<td>
+			{{item.SUCURS_D}}
+		</td>
+		<td>
+			{{item.NUMERO_D}}
+		</td>
+		
+	</tr>
+</table>
+</div>

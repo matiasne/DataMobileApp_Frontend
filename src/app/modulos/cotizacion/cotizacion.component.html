@@ -1,0 +1,41 @@
+<div class="container" [@fadeInOutAnimation]>
+  <form *ngIf="_usuarioActivoService.isAdmin()">
+  	<div class="form-group">
+      <label for="grano">Grano:</label>    
+      <select #selectElemEspecie class="form-control" [(ngModel)]="nuevaCotizacion.id_grano" [ngModelOptions]="{standalone: true}">  
+        <option *ngFor="let grano of granos" [value]="grano.id">
+          {{grano.nombre}}
+        </option>        
+      </select>
+    </div>
+  	<div class="form-group">
+  		<label for="fecha">Fecha:</label>
+  		<input type="date" class="form-control" name="fecha" [(ngModel)]="nuevaCotizacion.fecha">
+  	</div>
+  	<div class="form-group">
+  		<label for="valor">Valor:</label>
+  		<input type="text" class="form-control" name="valor" [(ngModel)]="nuevaCotizacion.valor">
+  	</div> 
+    <div class="form-group col-sm-12">
+      <button class="btn btn-info" (click)="cargarCotizacion()">Cargar</button>
+    </div> 	
+  </form>
+
+  {{ultimaFecha |  date:'shortDate'}}
+
+  <table class="table">
+    <tr>
+      <td>
+        Grano
+      </td>
+      <td>
+        Valor
+      </td>
+    </tr>
+    <tr *ngFor="let cotizacion of cotizaciones">
+      <td>{{cotizacion.nombre}}</td>
+      <td>{{cotizacion.valor}}</td>
+    </tr>
+  </table>
+
+</div>
