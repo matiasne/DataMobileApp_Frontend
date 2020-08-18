@@ -1,3 +1,21 @@
 export const environment = {
-  production: true
+  production: true,
+  url: "http://200.49.127.237/DataMobileApp/",
+  urlUsuarios: "http://200.49.127.237/DataMobileApp/usuarios.php/",
+  urlNotificaciones: "http://200.49.127.237/DataMobileApp/notificaciones.php/",
+  urlModulo: "http://200.49.127.237/DataMobileApp/modulo.php/",
+  urlEmpresa: "http://200.49.127.237/DataMobileApp/empresa.php/",
+  urlClientes: "http://200.49.127.237/DataMobileApp/clientes.php/",
+  urlModulosClientes: "http://200.49.127.237/DataMobileApp/modulos/clientes.php/",
+  urlModulosComprobantes: "http://200.49.127.237/DataMobileApp/modulos/comprobantes.php/",
+  urlModulosCotizaciones: "http://200.49.127.237/DataMobileApp/modulos/cotizaciones.php/",
+  urlModulosEntregasPendientes: "http://200.49.127.237/DataMobileApp/modulos/entregasPendientes.php/",
+  urlModulosEspecies: "http://200.49.127.237/DataMobileApp/modulos/especies.php/",
+  urlModulosFichaFinanciera: "http://200.49.127.237/DataMobileApp/modulos/fichaFinanciera.php/",
+  urlModulosFichaGranaria: "http://200.49.127.237/DataMobileApp/modulos/fichaGranaria.php/",
+  urlModulosGranos: "http://200.49.127.237/DataMobileApp/modulos/granos.php/",
+  urlModulosListaPrecios: "http://200.49.127.237/DataMobileApp/modulos/listaDePrecios.php/",
+  urlModulosOrdenesTrabajo: "http://200.49.127.237/DataMobileApp/modulos/ordenesTrabajo.php/",
+  urlModulosReservasPendientes: "http://200.49.127.237/DataMobileApp/modulos/reservasPendientes.php/",
+  urlComponentesFichaGranaria: "http://200.49.127.237/DataMobileApp/componentes/fichaGranaria.php"
 };

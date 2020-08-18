@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-import {Http,Response,Headers,RequestOptions} from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs/Observable';
+import { environment } from '../../../../environments/environment.prod';
+//import {Observable} from 'rxjs/Observable';
+//import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 @Injectable()
 export class EspeciesService {
 
-	public url:String;
+	public url: String;
 
-  	constructor(
-  		public _http:Http,
-  	) {
-
-  		this.url = "http://200.49.127.237/DataMobileApp/modulos/especies.php/";
+  	constructor(public _http: Http) {
+		this.url = environment.urlModulosEspecies;
+  		//this.url = "http://200.49.127.237/DataMobileApp/modulos/especies.php/";
   	}
 
 	public Get(id_empresa){

@@ -1,7 +1,7 @@
 <div class="container" [@fadeInOutAnimation]>
-	<div class="titulo-componente">Ficha Financiera</div>
-	<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-		<div class="item-main-menu col-md-12">
+	<div class="titulo-componente"><h3>Ficha Financiera</h3></div>
+	<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" >
+		<div class="item-main-menu col-md-12 margen">
 			<div class="col-xs-10">
 				<h3 class="titulo">Filtros</h3>
 				<hr>
@@ -29,63 +29,53 @@
 			</form>
         </div>
 	</div>
-	<div class="text-right" >Saldo Anterior: {{saldoAnterior | numeroFinanciera:saldoAnterior}} </div> 
-			
-    <table class="table">
-			
-    	<tr>
-			<th class="text-center columna-fecha">
-				Fecha
-			</th>
-			<th class="text-left columna-detalle">
-				Detalle
-			</th>
-			<th class="text-left columna-comp">
-				Comp
-			</th>
-			<th class="text-left">
-				Debe
-			</th>
-			<th class="text-left">
-				Haber
-			</th>
-			<th class="text-left">
-				Saldo
-			</th>
-			<th class="text-left columna-fecha">
-				Vto./op
-			</th>
-			<th>
-				
-			</th>
-		</tr>
-		<tr *ngFor="let item of itemsFichaFinanciera">
-			<td class="text-right columna-fecha">
-				{{item.FECHACARGA.date  | date:'dd-MM-yyyy'}}
-			</td>
-			<td class="text-left columna-detalle">
-				{{item.DESDETALLE}}
-			</td>
-			<td class="text-right columna-comp">
-				{{item.COMPROBANTE}}
-			</td>
-			<td class="text-right">
-				{{item.DEBE | numeroFinanciera:item.DEBE}}
-			</td>
-			<td class="text-right">
-				{{item.HABER | numeroFinanciera:item.HABER}}
-			</td>
-			<td class="text-right"> 
-				{{item.SALDO2 |numeroFinanciera:item.SALDO2}}
-			</td>
-			<td class="text-right columna-fecha">
-				{{item.FechaVto.date | date:'dd-MM-yyyy' }}
-			</td>
-			<td class="text-right">
-				
-			</td>
-		</tr>
-	</table>
+	<div class="text-right btn-descargar">
+		<button class="btn btn-primary" (click)="descargarPDF()">
+			<span class="glyphicon glyphicon-download-alt"></span>
+			Descargar en PDF
+		</button>
+	</div>
+	<div class="text-right" >Saldo Anterior: {{saldoAnterior | numeroFinanciera:saldoAnterior}} </div> 		
+	<div class="table-responsive">
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th class="text-right columna-fecha">Fecha</th>
+					<th class="text-left columna-detalle">Detalle</th>
+					<th class="text-right columna-comp">Comprobante</th>
+					<th class="text-right columna-debe">Debe</th>
+					<th class="text-right columna-haber">Haber</th>
+					<th class="text-right columna-saldo">Saldo</th>
+					<th class="text-right columna-fecha">Vto./op</th>
+				</tr>
+			</thead>		
+			<tbody>
+				<tr *ngFor="let item of itemsFichaFinanciera">
+					<td class="text-right columna-fecha">
+						{{item.FECHACARGA.date  | date:'dd-MM-yyyy'}}
+					</td>
+					<td class="text-left columna-detalle">
+						{{item.DESDETALLE}}
+					</td>
+					<td class="text-right columna-comp">
+						{{item.COMPROBANTE}}
+					</td>
+					<td class="text-right columna-debe">
+						{{item.DEBE | numeroFinanciera:item.DEBE}}
+					</td>
+					<td class="text-right columna-haber">
+						{{item.HABER | numeroFinanciera:item.HABER}}
+					</td>
+					<td class="text-right columna-saldo"> 
+						{{item.SALDO2 |numeroFinanciera:item.SALDO2}}
+					</td>
+					<td class="text-right columna-fecha">
+						{{item.FechaVto.date | date:'dd-MM-yyyy' }}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 	<div class="text-right" >Saldo Vencido: {{saldoVencido | numeroFinanciera:saldoAnterior}} </div> 
 	<div class="text-right" >Saldo A Vencer: {{saldoAVencer | numeroFinanciera:saldoAnterior}} </div> 
 </div>

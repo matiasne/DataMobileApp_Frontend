@@ -54,6 +54,7 @@ import { NotificacionNoticiaComponent } from './notificacion-noticia/notificacio
 import { NotificacionNuevoUsuarioComponent } from './notificacion-nuevo-usuario/notificacion-nuevo-usuario.component';
 import { SelecionarClienteComponent } from './selecionar-cliente/selecionar-cliente.component';
 import { FichaFinancieraLosCondoresComponent } from './modulos/ficha-financiera-los-condores/ficha-financiera-los-condores.component';
+import { NumerosFinancieraPipe } from './pipes/numeros-financiera.pipe';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { FichaFinancieraLosCondoresComponent } from './modulos/ficha-financiera-
     NumerosFinanciera,
     NumerosGranaria,
     FichaFinancieraLosCondoresComponent,
+    NumerosFinancieraPipe,
   ],
   imports: [
     BrowserModule,

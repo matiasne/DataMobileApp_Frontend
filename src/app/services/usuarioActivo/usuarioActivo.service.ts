@@ -1,40 +1,40 @@
 import { Injectable } from '@angular/core';
-import {Http,Response,Headers,RequestOptions} from '@angular/http';
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-
-import {ModuloService} from '../modulo/modulo.service';
-import {ClientesService} from '../../modulos/services/clientes/clientes.service';
-
-import {Cliente} from '../../modulos/models/cliente';
-import {Modulo} from '../../models/modulo';
-import {Usuario} from '../../models/usuario';
+import { ClientesService } from '../../modulos/services/clientes/clientes.service';
+import { Cliente } from '../../modulos/models/cliente';
+import { Modulo } from '../../models/modulo';
+import { Usuario } from '../../models/usuario';
+import { environment } from '../../../environments/environment';
+//import { Observable } from 'rxjs/Observable';
+//import { Subject } from 'rxjs/Subject';
+//import { Http, Response, Headers, RequestOptions } from '@angular/http';
+//import { ModuloService } from '../modulo/modulo.service';
 
 @Injectable()
 export class UsuarioActivoService {
 
-  public usuarioActivo:Usuario;
-  public clienteActivo:Cliente;
-	public url:String;
-  public modulosActivos:Modulo[];
+  public usuarioActivo: Usuario;
+  public clienteActivo :Cliente;
+	public url: String;
+  public modulosActivos: Modulo[];
 
   public userPicture = "";
   public userName = "";
   public userMail = "";
 
   constructor(
-
-  	public _http:Http,
-    private _moduloService:ModuloService,
-    private _clientesService:ClientesService
+  	public _http: Http,
+    //private _moduloService: ModuloService,
+    private _clientesService: ClientesService
   ) { 
-  		this.url = "http://200.49.127.237/DataMobileApp/usuarios.php/";
-      this.usuarioActivo = new Usuario(0,"","","",false,false,"","","","");
-      this.clienteActivo = new Cliente();      
+    this.url = environment.urlUsuarios;  
+    //this.url = "http://200.49.127.237/DataMobileApp/usuarios.php/";
+    this.usuarioActivo = new Usuario(0,"","","",false,false,"","","","");
+    this.clienteActivo = new Cliente();      
   }
 
-  public SetPerfilLocal(usuario:Usuario){
+  public SetPerfilLocal(usuario: Usuario){
     console.log(usuario);    
     this.usuarioActivo = usuario;   
   }
@@ -110,9 +110,5 @@ export class UsuarioActivoService {
   getClienteNombre(){
     return this.clienteActivo.Nombre;
   }
-
-
-
-  
 
 }

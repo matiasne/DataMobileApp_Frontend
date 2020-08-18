@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
-import {Http,Response,Headers,RequestOptions} from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs/Observable';
-
 import {Grano} from '../../models/grano';
+import { environment } from '../../../../environments/environment';
+//import {Observable} from 'rxjs/Observable';
+//import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 @Injectable()
 export class GranosService {
 
-	public url:String;
+	public url: String;
 
-  	constructor(
-  		public _http:Http,
-  	) { 
-  		this.url = "http://200.49.127.237/DataMobileApp/modulos/granos.php/";
+  	constructor(public _http: Http) { 
+		this.url = environment.urlModulosGranos;
+  		//this.url = "http://200.49.127.237/DataMobileApp/modulos/granos.php/";
   	}
 
   	Get(id_empresa){
@@ -23,8 +23,7 @@ export class GranosService {
 	         .map(res => res.json());
 		}
 
-	Add(grano:Grano){
-
+	Add(grano: Grano){
 		let params ="id_empresa="+grano.id_empresa+"&nombre="+grano.nombre; 
 		console.log(params);
 		let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded', 'Authorization': 'Bearer ' + localStorage.getItem('access_token')});
@@ -32,7 +31,7 @@ export class GranosService {
 		         .map(res => res.json());
 	}	
 
-	Delete(id:number){		
+	Delete(id: number){		
 		let params ="id="+id; 
 		let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded', 'Authorization': 'Bearer ' + localStorage.getItem('access_token')});
 		return this._http.post(this.url+'borrar', params, {headers: headers})

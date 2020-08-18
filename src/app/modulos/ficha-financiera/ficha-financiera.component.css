@@ -1,3 +1,6 @@
+table{
+  table-layout: fixed !important;
+}
 
 .item-main-menu{
   background-color: white;
@@ -10,9 +13,6 @@
   z-index: 0;
 }
 
-
-
-
 .titulo-componente{
   position: fixed;
   z-index: 999;
@@ -20,8 +20,6 @@
   left: 40%;
   opacity: 0.5;
 }
-
-
 
 .icon-container{
   line-height: 110px;
@@ -33,7 +31,6 @@
   font-size: 48px;
   
 }
-
 
 .item-main-menu hr{
   margin-top: 0px;
@@ -62,17 +59,91 @@ td{
 .columna-fecha{
   width: 100px;
   overflow: hidden;
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .columna-detalle{
-  width: 120px;
+  width: 220px !important;
   overflow: hidden;
-    white-space: nowrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.columna-debe{
+  width: 100px !important;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.columna-haber{
+  width: 100px !important;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.columna-saldo{
+  width: 100px !important;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .columna-comp{
   width:140px;
   overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn-descargar{
+  padding: 5px;
+}
+
+.margen{
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 480px){
+  .columna-detalle{
+    width: 120px !important;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: pre-line;
+    text-overflow: ellipsis;
+  }
+  .columna-debe{
+    width: 100px !important;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
     white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .columna-haber{
+    width: 100px !important;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .columna-saldo{
+    width: 100px !important;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }
